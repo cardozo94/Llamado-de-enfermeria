@@ -994,6 +994,8 @@ void Llamado()
             info=10;
             counter=0;
             // tratar de borrar aqui y esperar un momento 1 o 2 segundos
+            //borrar();
+            //delay(2000);//Espera 2 segundos. 
          }//else{}
        T0 = millis();
     }//else{}
