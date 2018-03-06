@@ -371,7 +371,8 @@ void shiftIt(byte dataOut,int pin) {
             t=20;
             h=0;
             info=10; 
-            counter=0;             
+            counter=0;     
+            // tratar de borrar aqui y esperar un momento 1 o 2 segundos        
          }//else{}
        T0 = millis();
     }//else{}
