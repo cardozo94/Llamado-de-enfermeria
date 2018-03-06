@@ -669,11 +669,11 @@ void loop(){
                 counter=1;
             }//else{}
     }
-    //Espera 0.5 seg. para que la enfermera sepa que si lo apago. Y si hay un evento esperando suene despues.  
-    if (counter == 0 && t == 20 && info == 10 && h == 0)
+    //Espera 1 seg. para que la enfermera sepa que si lo apago. Y si hay un evento esperando suene despues.  
+    if (t == 20 && info == 10 && h == 0)
     {
         borrar();
-        delay(500);
+        delay(1000);
     }
   }
 
@@ -1050,6 +1050,7 @@ void receiveEvent (int incomingByte){
             }else{
                   borrar();
                   t=20;
+                  info=10; //para que sea valida la espera despues de la respuesta de la enfermera, cuando las interrupciones estan en los dos micros. 
             }
       }
       else{
