@@ -669,6 +669,12 @@ void loop(){
                 counter=1;
             }//else{}
     }
+    //Espera 0.5 seg. para que la enfermera sepa que si lo apago. Y si hay un evento esperando suene despues.  
+    if (counter == 0 && t == 20 && info == 10 && h == 0)
+    {
+        borrar();
+        delay(500);
+    }
   }
 
 void borrar(){
@@ -988,14 +994,11 @@ void Llamado()
                   //t=dir;
             }//else{}        
        }
-       if (m==LOW){//Respuesta
+       if (m==LOW){//Respuesta, la enfermera oprime por segunda vez el pulsador para desactivar la alarma
             t=20;
             h=0;
             info=10;
             counter=0;
-            // tratar de borrar aqui y esperar un momento 1 o 2 segundos
-            //borrar();
-            //delay(2000);//Espera 2 segundos. 
          }//else{}
        T0 = millis();
     }//else{}

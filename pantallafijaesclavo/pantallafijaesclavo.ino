@@ -263,6 +263,12 @@ void loop() {
    digitalWrite(3,LOW);  
    reloj=0; 
    borrar();
+   //Espera 0.5 seg. para que la enfermera sepa que si lo apago. Y si hay un evento esperando suene despues.  
+    if (counter == 0 && t == 20 && info == 10 && h == 0)
+    {
+        borrar();
+        delay(500);
+    }
   }
 
 void borrar(){
@@ -367,12 +373,11 @@ void shiftIt(byte dataOut,int pin) {
                   info=6;
            }//else{}       
        }
-       if(m==LOW) {//Respuesta
+       if(m==LOW) {//Respuesta, la enfermera oprime por segunda vez el pulsador para desactivar la alarma
             t=20;
             h=0;
             info=10; 
-            counter=0;     
-            // tratar de borrar aqui y esperar un momento 1 o 2 segundos        
+            counter=0;            
          }//else{}
        T0 = millis();
     }//else{}
